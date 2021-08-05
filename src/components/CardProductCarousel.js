@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     color: Colors.gray_medium,
   },
   content_card: {
-    width: '90%',
+    width: '100%',
     backgroundColor: 'white',
     borderRadius: 20,
   },
