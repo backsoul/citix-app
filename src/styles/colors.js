@@ -3,6 +3,7 @@ const Colors = {
   gray_medium: '#9DB5C2',
   gray_light: '#B6B7B7',
   white: '#FFFFFF',
+  white_light: '#F7FAFC',
 };
 
 export default Colors;

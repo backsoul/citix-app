@@ -1,11 +1,11 @@
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet, ScrollView, SafeAreaView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Colors from '.././styles/colors';
 import Search from '../components/Search';
 import Font from '.././styles/font';
+import ListProductsCarousel from '../components/ListProductsCarousel';
 import ListProducts from '../components/ListProducts';
-// width screens
 const Home = () => {
   const user = {name: 'Daniel'};
 
@@ -25,22 +25,28 @@ const Home = () => {
   ];
 
   return (
-    <View style={styles.content}>
-      <View style={styles.content__header}>
-        <Text style={styles.content__headerText}>
-          ¡Buenos días {user.name}!
-        </Text>
-        <Icon
-          name="shopping-cart"
-          color={Colors.gray_medium}
-          size={22}
-          onPress={() => console.log('hola!')}
-        />
-      </View>
-      <Search />
-      <Text style={styles.section__text}>Toures Gastronómicos</Text>
-      <ListProducts items={products} />
-    </View>
+    <SafeAreaView>
+      <ScrollView>
+        <View style={styles.content}>
+          <View style={styles.content__header}>
+            <Text style={styles.content__headerText}>
+              ¡Buenos días {user.name}!
+            </Text>
+            <Icon
+              name="shopping-cart"
+              color={Colors.gray_medium}
+              size={22}
+              onPress={() => console.log('hola!')}
+            />
+          </View>
+          <Search />
+          <Text style={styles.section__text}>Toures Gastronómicos</Text>
+          <ListProductsCarousel items={products} />
+          <Text style={styles.section__text}>Nuevas experiencias</Text>
+          <ListProducts items={products} />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 

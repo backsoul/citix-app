@@ -14,7 +14,7 @@ const Search = () => {
       />
       <TextInput
         style={{flex: 1}}
-        placeholder="Enter Your Name Here"
+        placeholder="Que buscas"
         underlineColorAndroid="transparent"
         placeholderTextColor={Colors.gray_medium}
       />
@@ -27,10 +27,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: Colors.gray_light,
+    backgroundColor: Colors.white_light,
     paddingHorizontal: 18,
     borderWidth: 0.5,
-    borderColor: Colors.gray_light,
+    borderColor: Colors.white_light,
     height: 50,
     borderRadius: 22,
   },

@@ -1,61 +1,61 @@
 import React from 'react';
-import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
-import {color} from 'react-native-reanimated';
+import {View, Text, StyleSheet} from 'react-native';
 import Colors from '../styles/colors';
 import Font from '../styles/font';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 const CardProduct = ({item}) => {
   return (
-    <View style={styles.content_card}>
+    <View style={styles.container}>
       <View style={styles.image_content}></View>
-      <Text style={styles.card_text}>{item.title}</Text>
-      <View style={styles.card__foooter}>
-        <Text style={styles.card_description}>{item.description}</Text>
-        <TouchableOpacity style={styles.card_button}>
-          <Text style={styles.card_button__text}>Ver Tour</Text>
-        </TouchableOpacity>
+      <View style={styles.card_information}>
+        <Text style={styles.text_title}>Tour del Cafe</Text>
+        <Text style={styles.text_subtitle}>Lugar: Mesa De los Santos</Text>
+        <Text style={styles.text_days}>1 Día</Text>
       </View>
+      <Icon
+        name="ellipsis-h"
+        size={22}
+        color={Colors.gray_medium}
+        style={{paddingRight: 10}}
+      />
     </View>
   );
 };
 const styles = StyleSheet.create({
+  text_title: {
+    fontSize: 14,
+    fontWeight: Font.weight.ExtraBold,
+    color: Colors.gray_medium,
+  },
+  text_subtitle: {
+    fontSize: 12,
+    fontWeight: Font.weight.ExtraBold,
+    color: Colors.gray_medium,
+  },
+  text_days: {
+    fontSize: 12,
+    fontWeight: '200',
+    color: Colors.gray_medium,
+  },
   image_content: {
     backgroundColor: Colors.gray_medium,
-    width: '100%',
-    height: 160,
+    width: '20%',
+    height: 80,
     borderRadius: 20,
   },
-  card_text: {
-    color: Colors.gray_medium,
-    fontWeight: Font.weight.ExtraBold,
-    fontSize: Font.size.text_section,
-    paddingHorizontal: 20,
-    paddingVertical: 5,
-  },
-  card_description: {
-    fontSize: 12,
-    paddingHorizontal: 20,
-    paddingVertical: 5,
-    color: Colors.gray_medium,
-  },
-  content_card: {
+  container: {
     width: '100%',
-    backgroundColor: 'white',
-    borderRadius: 20,
-  },
-  card__foooter: {
     display: 'flex',
     flexDirection: 'row',
+    alignItems: 'center',
     justifyContent: 'space-between',
+    marginVertical: 10,
   },
-  card_button__text: {
-    color: Colors.white,
-  },
-  card_button: {
-    backgroundColor: Colors.gray_medium,
-    paddingHorizontal: 25,
-    paddingVertical: 10,
-    borderTopStartRadius: 20,
-    borderBottomEndRadius: 20,
+  card_information: {
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    marginHorizontal: 20,
   },
 });
 export default CardProduct;
