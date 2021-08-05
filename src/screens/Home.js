@@ -4,8 +4,26 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Colors from '.././styles/colors';
 import Search from '../components/Search';
 import Font from '.././styles/font';
+import ListProducts from '../components/ListProducts';
+// width screens
 const Home = () => {
   const user = {name: 'Daniel'};
+
+  const products = [
+    {
+      title: 'Tour S: 3 restaurantes',
+      description: '$30.000 Por persona',
+    },
+    {
+      title: 'Tour S: 3 restaurantes',
+      description: '$30.000 Por persona',
+    },
+    {
+      title: 'Tour S: 3 restaurantes',
+      description: '$30.000 Por persona',
+    },
+  ];
+
   return (
     <View style={styles.content}>
       <View style={styles.content__header}>
@@ -21,6 +39,7 @@ const Home = () => {
       </View>
       <Search />
       <Text style={styles.section__text}>Toures Gastronómicos</Text>
+      <ListProducts items={products} />
     </View>
   );
 };
@@ -42,11 +61,15 @@ const styles = StyleSheet.create({
     color: Colors.gray_dark,
   },
   section__text: {
-    color: Colors.gray_medium,
+    color: Colors.gray_dark,
     marginTop: 30,
     fontWeight: Font.weight.ExtraBold,
     fontSize: Font.size.text_section,
     marginVertical: 20,
+  },
+  carousel_container: {
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 export default Home;

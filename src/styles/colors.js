@@ -2,6 +2,7 @@ const Colors = {
   gray_dark: '#2D4E60',
   gray_medium: '#9DB5C2',
   gray_light: '#B6B7B7',
+  white: '#FFFFFF',
 };
 
 export default Colors;
